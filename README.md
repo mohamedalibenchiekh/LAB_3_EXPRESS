@@ -55,17 +55,17 @@ npm test
 # Run manual tests (requires server running)
 npm run test:manual
 
-# Format code with Prettier
+# Format code with Prettier (requires internet connection)
 npm run format
 
-# Check code formatting
+# Check code formatting (requires internet connection)
 npm run format:check
 ```
 
 ## 🔧 Code Quality
 
 This project uses:
-- **Prettier** for code formatting
+- **Prettier** for code formatting (optional - automatically downloaded when available)
 - **ESLint** for linting (optional)
 - **npm audit** for security checks
 
@@ -75,7 +75,7 @@ This project uses:
 - Tab width: 2 spaces
 - Print width: 80 characters
 
-Run `npm run format` to format your code automatically.
+Run `npm run format` to format your code automatically (requires internet connection for first run).
 
 ## 📡 API Endpoints
 
@@ -256,8 +256,8 @@ Error responses follow this format:
 - Node.js (ES Modules support, version 18+ recommended)
 - npm
 
-### Development Dependencies
-- Prettier ^3.0.0 (for code formatting)
+### Development Tools
+- Prettier (automatically downloaded via npx)
 
 ## 👨‍💻 Author
 

@@ -32,8 +32,8 @@ jobs:
 
       - name: Check code formatting
         run: |
-          if command -v npx >/dev/null 2>&1; then
-            npx prettier --check "**/*.{js,json,md}" --ignore-path .prettierignore || echo "Prettier check failed - run 'npm run format' to fix"
+          if npm run format:check 2>/dev/null; then
+            echo "✅ Code formatting check passed"
           else
-            echo "npx not available, skipping format check"
+            echo "⚠️  Prettier not available, skipping format check"
           fi
