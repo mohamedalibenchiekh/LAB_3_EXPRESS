@@ -37,19 +37,45 @@ lab-3/
    npm install
    ```
 
-## ▶️ Running the Application
+## 🛠 Development Scripts
 
-### Development Mode (with auto-restart)
 ```bash
+# Install all dependencies (including dev dependencies)
+npm install
+
+# Start development server with auto-restart
 npm run dev
-```
 
-### Production Mode
-```bash
+# Start production server
 npm start
+
+# Run automated tests (CI-friendly)
+npm test
+
+# Run manual tests (requires server running)
+npm run test:manual
+
+# Format code with Prettier
+npm run format
+
+# Check code formatting
+npm run format:check
 ```
 
-The server will start on `http://localhost:3000`
+## 🔧 Code Quality
+
+This project uses:
+- **Prettier** for code formatting
+- **ESLint** for linting (optional)
+- **npm audit** for security checks
+
+### Prettier Configuration
+- Semi-colons: Yes
+- Single quotes: Yes
+- Tab width: 2 spaces
+- Print width: 80 characters
+
+Run `npm run format` to format your code automatically.
 
 ## 📡 API Endpoints
 
@@ -227,8 +253,11 @@ Error responses follow this format:
 
 ## 📋 Requirements
 
-- Node.js (ES Modules support)
-- Express.js 5.0.0+
+- Node.js (ES Modules support, version 18+ recommended)
+- npm
+
+### Development Dependencies
+- Prettier ^3.0.0 (for code formatting)
 
 ## 👨‍💻 Author
 

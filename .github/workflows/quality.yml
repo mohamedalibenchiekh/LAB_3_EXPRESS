@@ -27,16 +27,7 @@ jobs:
       run: npm audit --audit-level moderate
 
     - name: Check code formatting
-      run: |
-        # Check if prettier is available
-        if command -v npx >/dev/null 2>&1 && npx prettier --version >/dev/null 2>&1; then
-          echo "Running Prettier check..."
-          npx prettier --check "**/*.{js,json,md}"
-        else
-          echo "Prettier not found, checking basic formatting..."
-          # Basic check for consistent indentation
-          find . -name "*.js" -not -path "./node_modules/*" -exec grep -l "  " {} \; | head -5
-        fi
+      run: npx prettier --check "**/*.{js,json,md}" --ignore-path .prettierignore
 
     - name: Lint JavaScript (if ESLint available)
       run: |
