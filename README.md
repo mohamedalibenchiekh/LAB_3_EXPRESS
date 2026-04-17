@@ -142,16 +142,53 @@ DELETE /api/events/1
 Run the included test script to verify all API endpoints:
 
 ```bash
-node test-api.js
+# CI-friendly automated tests (starts server automatically)
+npm test
+
+# Manual tests (requires server to be running separately)
+npm run test:manual
 ```
 
 The test script will:
+- Start the server automatically
 - Test all CRUD operations
 - Verify error handling
 - Check data validation
 - Confirm proper HTTP status codes
 
-**Note**: Make sure the server is running before executing tests.
+## 🚀 CI/CD
+
+This project includes GitHub Actions workflows for automated testing and deployment:
+
+### Workflows
+
+1. **CI Pipeline** (`.github/workflows/ci.yml`)
+   - Runs on every push and pull request to `main` branch
+   - Tests against Node.js 18.x and 20.x
+   - Installs dependencies and runs automated tests
+   - Checks code formatting (if configured)
+
+2. **Code Quality** (`.github/workflows/quality.yml`)
+   - Runs security audits with `npm audit`
+   - Checks code formatting consistency
+   - Runs ESLint if configured
+   - Scans for TODO comments
+
+3. **Deploy** (`.github/workflows/deploy.yml`)
+   - Triggers on push to `main` branch
+   - Can be manually triggered
+   - Includes placeholder for deployment steps
+   - Add your deployment commands (Docker, PM2, cloud platforms, etc.)
+
+### Running Tests Locally
+
+```bash
+# Run CI tests (recommended)
+npm test
+
+# Run manual tests (start server first with npm run dev)
+npm run test:manual
+```
 
 ## 🔧 Middleware
 
