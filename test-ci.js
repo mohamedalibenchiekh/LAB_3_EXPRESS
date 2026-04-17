@@ -26,7 +26,7 @@ function makeRequest(method, path, data = null) {
  status: res.statusCode,
  body: JSON.parse(body)
  });
- } catch (e) {
+ } catch (_e) {
  resolve({
  status: res.statusCode,
  body: body

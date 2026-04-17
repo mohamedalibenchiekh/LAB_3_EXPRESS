@@ -1,7 +1,7 @@
 // RESPONSE HELPER
 // Standardized response formats
 export class ApiResponse {
- static success(data, message = "Success", statusCode = 200) {
+ static success(data, message = "Success") {
  return {
  success: true,
  message,
@@ -9,7 +9,7 @@ export class ApiResponse {
  timestamp: new Date().toISOString()
  };
  }
- static error(message = "Error", statusCode = 400, data = null) {
+ static error(message = "Error", data = null) {
  return {
  success: false,
  message,

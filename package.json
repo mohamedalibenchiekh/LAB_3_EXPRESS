@@ -5,17 +5,23 @@
  "type": "module",
  "main": "server.js",
  "scripts": {
- "start": "node server.js",
- "dev": "node --watch server.js",
- "test": "node test-ci.js",
- "test:manual": "node test-api.js",
- "format": "npx prettier --write \"**/*.{js,json,md}\"",
- "format:check": "npx prettier --check \"**/*.{js,json,md}\""
+  "start": "node server.js",
+  "dev": "node --watch server.js",
+  "test": "node test-ci.js",
+  "test:manual": "node test-api.js",
+  "format": "npx prettier --write \"**/*.{js,json,md}\"",
+  "format:check": "npx prettier --check \"**/*.{js,json,md}\"",
+  "lint": "eslint \"**/*.js\""
  },
  "keywords": ["express", "nodejs", "webserver"],
  "author": "Mohamed Ali Ben Chiekh",
  "license": "MIT",
  "dependencies": {
- "express": "^5.0.0"
+  "express": "^5.0.0"
+ },
+ "devDependencies": {
+  "@eslint/js": "^9.0.0",
+  "eslint": "^9.0.0",
+  "globals": "^15.0.0"
  }
 }
